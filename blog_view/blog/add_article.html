@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="GBK">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="ckeditor/adapters/jquery.js"></script>
+		<title>写博客</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<h3>文章标题</h3>
+			<input type="text" />
+		</div>
+		<div class="container">
+			<form>
+				<textarea name="editor1" id="editor1" rows="100%" cols="100%">
+            		
+				</textarea>
+			</form>
+		</div>
+		<div class="container">
+			<input type="button" id="pub_art" value="发表文章" onclick="pub_art()"/>
+		</div>
+		<div class="container">
+			<textarea id="show_data"></textarea>
+		</div>
+		<div id="cc">
+			
+		</div>
+		<script>
+			CKEDITOR.replace('editor1');
+		</script>
+		<script>
+			function pub_art(){
+				//var content = document.getElementById("editor1");
+				var data = CKEDITOR.instances.editor1.getData();
+				//alert(data);
+				document.getElementById("show_data").innerHTML=data;
+				document.getElementById("cc").innerHTML=data;
+				//$("#show_data").setValue(data);
+			}
+			
+			
+		</script>
+	</body>
+</html>

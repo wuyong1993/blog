@@ -1,0 +1,16 @@
+server:
+  #部署端口
+  port: 8080
+  #开发端口
+  #port: 8280
+  servlet:
+    context-path: /blog
+    
+logging:
+    config: classpath:log4j.properties
+    
+springfox:
+  documentation:
+    swagger:
+      v2:
+        host: localhost:8280/blog/api
